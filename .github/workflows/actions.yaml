@@ -1,22 +1,13 @@
-name: Shell Commands
+name: Shows JS Action 
 on: [push]
 jobs:
- linux-shell-command:
-    runs-on: ubuntu-latest
+  github-actions:
+    runs-on: ubuntu-18.04
     steps:
-      - name: Echoing the name Santhosh
-        run: echo "Hello World"
-      - name: Print versions of Node
-        shell: bash
-        run: |
-          node -v
-          npm -v
-  windows-shell-command:
-    runs-on: windows-latest
-    steps:
-      - name: Prints Working Directory
-        run: Get-Location
-      - name: Changing Shell
-        shell: bash
-        run: pwd
-  
+      - name: JS Action
+        id: JS
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Santhosh
+      - name: Output of JS Action
+        run: echo "${{steps.JS.outputs.time}}""
