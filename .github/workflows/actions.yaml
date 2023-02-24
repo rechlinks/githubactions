@@ -1,12 +1,22 @@
 name: Shell Commands
 on: [push]
 jobs:
-  shell-command:
+ linux-shell-command:
     runs-on: ubuntu-latest
     steps:
       - name: Echoing the name Santhosh
         run: echo "Hello World"
       - name: Print versions of Node
+        shell: bash
         run: |
           node -v
           npm -v
+  windows-shell-command:
+    runs-on: windows-latest
+    steps:
+      - name: Prints Working Directory
+        run: Get-Location
+      - name: Changing Shell
+        shell: bash
+        run: pwd
+  
