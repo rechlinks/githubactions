@@ -1,7 +1,7 @@
 name: Shell Commands
 on: [push]
 jobs:
- linux-shell-command:
+  linux-shell-command:
     runs-on: ubuntu-latest
     steps:
       - name: Echoing the name Santhosh
@@ -11,13 +11,13 @@ jobs:
         run: |
           node -v
           npm -v
-# windows:
-#    runs-on: windows-latest
-#    needs: ["linux-shell-command"]
-#    steps:
-#      - name: Prints Working Directory
-#        run: Get-Location
-#      - name: Changing Shell
-#        shell: bash
-#        run: pwd
+  linux-windows-command:
+      runs-on: windows-latest
+      needs: ["linux-shell-command"]
+      steps:
+        - name: Prints Working Directory
+          run: Get-Location
+        - name: Changing Shell
+          shell: bash
+          run: pwd
   
