@@ -10,4 +10,4 @@ jobs:
         with:
           who-to-greet: Santhosh
       - name: Output of JS Action
-        run: echo "${{steps.JS.outputs.time}}""
+        run: echo "${{steps.JS.outputs.time}}"
