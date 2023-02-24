@@ -4,6 +4,16 @@ jobs:
   github-actions:
     runs-on: ubuntu-18.04
     steps:
+      - name: List items in the Directory
+        run: |
+          ls -a
+          pwd
+      - name: clones the Directory
+        uses: actions/checkout@v1
+      - name: List items in the Directory after Checkout
+        run: |
+          ls -a
+          pwd
       - name: JS Action
         id: JS
         uses: actions/hello-world-javascript-action@v1
