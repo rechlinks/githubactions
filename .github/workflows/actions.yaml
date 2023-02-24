@@ -1,0 +1,12 @@
+name: Shell Commands
+on: [push]
+jobs:
+  shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echoing the name Santhosh
+        run: echo "Hello World"
+      - name: Print versions of Node
+        run: |
+          node -v
+          npm -v
