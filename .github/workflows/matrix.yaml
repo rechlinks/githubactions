@@ -1,0 +1,16 @@
+name: node version
+on: push
+jobs:
+  node-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Logs node version
+        run: |
+          node -v
+      - name: Changing node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 8
+      - name: Logs node version after Changing
+        run: |
+          node -v

@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: Echoing the name Santhosh
         run: echo "Hello World"
+        continue-on-error: true
+        timeout-minutes: 360
       - name: Print versions of Node
         shell: bash
         run: |
