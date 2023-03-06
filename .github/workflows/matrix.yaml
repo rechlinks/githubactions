@@ -7,6 +7,12 @@ jobs:
       matrix: 
         os: [ubuntu-latest, macos-latest, windows-latest]
         node-version: [6,8,10]
+        include:
+          os: ubuntu-latest
+          node-version: 4
+        exclude:
+          os: windows-latest
+          node-version: 10
       fail-fast: false # if false, without depending on success or failure it will contine the process
       max-parallel: 3 # Max number of parallel jobs
     steps:
